@@ -1,7 +1,5 @@
-# sel-blueframe-sdk
-WSU CptS 421-423 Capstone Project, Spring -- Fall 26
-
 # SEL Blueframe Python SDK
+WSU CptS 421-423 Capstone Project, Spring -- Fall 26
 
 ## Project summary
 
