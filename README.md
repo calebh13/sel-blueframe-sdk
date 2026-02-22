@@ -45,11 +45,5 @@ This repo will eventually be SEL confidential so it should not be open to public
 
 ## Additional Documentation
 
-TODO: Provide links to additional documentation that may exist in the repo, e.g.,
-  * Sprint reports
-  * User links
-
-## License
-
-If you haven't already, add a file called `LICENSE.txt` with the text of the appropriate license.
-We recommend using the MIT license: <https://choosealicense.com/licenses/mit/>
+  * Sprint Report 1: https://github.com/calebh13/sel-blueframe-sdk/blob/main/Sprints/Sprint_1/Sprint_Report.md
+  * Google Drive with Additional Documentation: https://drive.google.com/drive/u/1/folders/1l-EKSdQvaO1z8Cdv-wOVbb2EH3CFL6S-
