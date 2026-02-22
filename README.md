@@ -5,49 +5,43 @@ WSU CptS 421-423 Capstone Project, Spring -- Fall 26
 
 ### One-sentence description of the project
 
-TODO: A 20-second elevator pitch of your project - its core idea summarized in one sentence.
+We’re building a Python SDK that abstracts Blueframe’s low-level, TCP-based Signal Hub APIs into a clean, safe, and developer-friendly interface to speed development, lower the skill barrier, and improve reliability without sacrificing security or performance.
 
 ### Additional information about the project
 
-TODO: Write a compelling/creative/informative project description / summary
+Blueframe is SEL’s hardened, Linux-based operating system designed for secure, high-performance automation and monitoring in operational technology environments. While powerful, Blueframe’s existing APIs are intentionally low-level and verbose, requiring deep system knowledge and significant software expertise. This creates long onboarding times, slows development velocity, raises the barrier to entry for electrical and automation engineers, and increases the risk of subtle reliability issues due to the lack of built-in safeguards.
+This project addresses these challenges by developing a Python Software Development Kit (SDK) for Blueframe that simplifies and standardizes interaction with Signal Hub, a core Blueframe service. The SDK provides a high-level, developer-friendly abstraction over Signal Hub’s required on-box TCP interface, allowing applications to communicate with Signal Hub safely and efficiently without exposing developers to unnecessary low-level complexity.
+
+By encapsulating common patterns, enforcing best practices, and providing clearer error handling, the SDK accelerates application development, reduces onboarding effort, and improves system robustness—while preserving Blueframe’s core principles of security, reliability, and performance. Ultimately, this project aims to make Blueframe development more accessible, maintainable, and scalable for both software and automation engineers working within SEL’s OT ecosystem.
 
 ## Installation
 
 ### Prerequisites
 
-TODO: List what a user needs to have installed before running the installation instructions below (e.g., git, which versions of Ruby/Rails)
+None at this stage of our project. This is an unknown element.
 
 ### Add-ons
 
-TODO: List which add-ons are included in the project, and the purpose each add-on serves in your app.
+None at this stage of our project. This is an unknown element.
 
 ### Installation Steps
 
-TODO: Describe the installation process (making sure you mention `bundle install`).
-Instructions need to be such that a user can just copy/paste the commands to get things set up and running. 
+None at this stage of our project. This is an unknown element.
 
 
 ## Functionality
 
-TODO: Write usage instructions. Structuring it as a walkthrough can help structure this section,
-and showcase your features.
+None at this stage of our project. This is an unknown element.
 
 
 ## Known Problems
 
-TODO: Describe any known issues, bugs, odd behaviors or code smells. 
-Provide steps to reproduce the problem and/or name a file or a function where the problem lives.
+None at this stage of our project. This is an unknown element.
 
 
 ## Contributing
 
-TODO: Leave the steps below if you want others to contribute to your project.
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+This repo will eventually be SEL confidential so it should not be open to public contribution.
 
 ## Additional Documentation
 
