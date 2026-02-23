@@ -13,10 +13,16 @@ We learned extensively about how Blueframe operates, core OS concepts, Signal Hu
 
 ## Completed Issues/User Stories 
 Here are links to the issues that we completed in this sprint:
-- TODO
+- https://github.com/calebh13/sel-blueframe-sdk/issues/10
+- https://github.com/calebh13/sel-blueframe-sdk/issues/9
+- https://github.com/calebh13/sel-blueframe-sdk/issues/8
  
  ## Incomplete Issues/User Stories
- N/A
+ Here are links to the user issues that will carry over to the next sprint:
+ - https://github.com/calebh13/sel-blueframe-sdk/issues/2
+ - https://github.com/calebh13/sel-blueframe-sdk/issues/6
+ - https://github.com/calebh13/sel-blueframe-sdk/issues/4
+ 
  
 ## Code Files for Review
 N/A
