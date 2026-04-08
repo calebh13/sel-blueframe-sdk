@@ -18,7 +18,7 @@ By encapsulating common patterns, enforcing best practices, and providing cleare
 
 ### Prerequisites
 
-None at this stage of our project. This is an unknown element.
+SEL Blueframe Field SDK is required to develop for Blueframe off-site. The Vanguard SDK is required to develop on-site.
 
 ### Add-ons
 
@@ -26,7 +26,7 @@ None at this stage of our project. This is an unknown element.
 
 ### Installation Steps
 
-None at this stage of our project. This is an unknown element.
+Confidential.
 
 
 ## Functionality
