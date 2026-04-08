@@ -1,0 +1,66 @@
+# Minutes of Meeting (MoM)
+
+**Project Title:** Blueframe SDK Development – Resource Emergency Discussion  
+**Team Number:** 03-SEL-BFSDK  
+**Client / Sponsor:** Schweitzer Engineering Laboratories (SEL)  
+**Mentor(s):** Joe Stanley  
+**Date:** April 7  
+**Time:** 11:00 AM  
+**Location / Platform:** In-person, Spark  
+**Participants (Team & Client):** Genevieve Kochel, Darron Li, Lucas Phillips, Caleb Hansen, Joe Stanley  
+**Meeting Number / Version:** 4
+
+Minutes were created using ChatGPT 4.o using meeting transcripts
+
+## 1. Agenda
+- **Item 1:** Review project delays and current roadblocks  
+- **Item 2:** Emphasize urgency of resource availability  
+- **Item 3:** Discuss mitigation strategies and next steps
+
+## 2. Key Discussion Points
+- **Emergency Situation:**  
+  The team stressed that the project is severely delayed due to lack of access to required resources:  
+  - No access to the existing SDK codebase  
+  - No security clearance for production systems  
+  - Complete inability to begin coding or testing  
+
+- **Impact on Schedule:**  
+  - Sprint 2 and 3 milestones are at risk; key deliverables cannot proceed.  
+  - GO COMTRADE parser prototype and SDK abstraction tasks remain on hold.  
+  - The team cannot validate endpoints or integrate with Blueframe components.  
+
+- **Client Discussion:**  
+  Joe Stanley acknowledged the severity of the blockage. He reiterated that access is pending security clearance and internal approvals.  
+  - Team highlighted that project timelines are slipping, stressing the need for expedited clearance.  
+  - Agreed to escalate internally to highlight risk to overall deliverables.
+
+## 3. Decisions Made
+- Project remains fully blocked until resources (SDK access and clearance) are available.  
+- Interim work may include offline design planning, documentation, and architecture preparation.  
+- Escalation of access delays to higher management will be pursued to address schedule impact.
+
+## 4. Action Items / Responsibilities
+- **Task:** Track security clearance progress and SDK access  
+  **Assigned To:** Joe Stanley  
+  **Priority:** High
+
+- **Task:** Prepare offline architecture and SDK abstraction documentation  
+  **Assigned To:** Entire Team  
+  **Priority:** Medium
+
+- **Task:** Maintain clear record of blocked tasks and dependencies for escalation  
+  **Assigned To:** Caleb Hansen  
+  **Priority:** High
+
+## 5. Client Feedback / Clarifications
+- Resource access is the critical gating factor for all development.  
+- Offline preparation can continue but cannot substitute actual development.  
+- Emphasis on urgent internal escalation to prevent further schedule slippage.
+
+## 7. Next Steps & Follow-Up
+- **Deliverables before next meeting:** Architecture and SDK abstraction documentation, updated blocked tasks list  
+- **Next meeting scheduled on:** April 14  
+- **Agreed communication channel:** Teams / Email
+
+**Prepared By:** Lucas Phillips 
+**Date of Circulation:** April 7
