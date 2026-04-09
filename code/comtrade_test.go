@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// ---------------- WRITE TEST ----------------
+// ---------------- WRITE TESTS ----------------
 
 func TestWriteCOMTRADE(t *testing.T) {
 	ct := mockCOMTRADE()
