@@ -11,7 +11,6 @@ import (
 
 // ========================= TYPES =========================
 
-
 type AnalogChannel struct {
 	Index int
 	Name  string
