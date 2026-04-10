@@ -31,12 +31,11 @@ Confidential.
 
 ## Functionality
 
-None at this stage of our project. This is an unknown element.
-
+Go program for COMTRADE file reading and writing.
 
 ## Known Problems
 
-None at this stage of our project. This is an unknown element.
+None at this stage of our project.
 
 
 ## Contributing
