@@ -1,4 +1,4 @@
-.name: SEL SDK / COMTRADE Enterprise Pipeline
+name: SEL SDK / COMTRADE Enterprise Pipeline
 
 on:
   push:
