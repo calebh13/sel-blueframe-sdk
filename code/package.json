@@ -1,0 +1,29 @@
+{
+  "publisher": "blueframe",
+  "name": "blueframe-sdk",
+  "displayName": "BlueFrame SDK",
+  "description": "Extracts field-sdk.tgz, runs the SDK manager, and launches the devcontainer.",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "blueframe-sdk.launch",
+        "title": "BlueFrame SDK: Launch"
+      },
+      {
+        "command": "blueframe-sdk.openDevcontainer",
+        "title": "BlueFrame SDK: Open Devcontainer"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.24.0"
+  }
+}

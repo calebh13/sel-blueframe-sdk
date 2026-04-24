@@ -1,0 +1,5 @@
+.vscode/**
+node_modules/**
+.gitignore
+*.md
+# field-sdk.tgz is intentionally NOT ignored — it ships with the extension
