@@ -1,64 +1,46 @@
-# Sprint x Report (Dates from Sprint * to Sprint *)
+# Sprint x Report (Dates from Sprint 4/10 to Sprint 5/1)
 
 ## YouTube link of Sprint * Video (Make this video unlisted)
 
 ## What's New (User Facing)
- * Feature 1 or Bug Fix 1
- * Feature 2 or Bug Fix 2
- * Feature n or Bug Fix n
+ * A VSCode extension that provides a one-click installation and deployment process for the Blueframe Field SDK.
+ * New user interface buttons in VSCode to automate environment tasks such as starting or stopping the local environment.
+ * A functional Python interface for parsing and writing IEEE COMTRADE files.
+ * Detailed troubleshooting guides and technology manuals for setting up the Blueframe development environment.
 
 ## Work Summary (Developer Facing)
-Provide a one paragraph synposis of what your team accomplished this sprint. Don't repeat the "What's New" list of features. Instead, help the instructor understand how you went about the work described there, any barriers you overcame, and any significant learnings for your team.
+This sprint focused on building the foundational bridge between Python and the Go-based Blueframe ecosystem. We developed two parallel wrapping strategies—CGo and Subprocess—to evaluate performance tradeoffs, using a custom "go-comtrade" repository as a complex test case for file I/O and multi-module integration. Our team overcame significant barriers regarding SEL-internal repository restrictions by identifying and documenting workarounds for missing Artifactory and Bitbucket dependencies. A major learning milestone involved mastering containerization tools like Docker, Kubernetes, and Helm to ensure the Field SDK could be deployed reliably in a simulated environment.
 
 ## Unfinished Work
-If applicable, explain the work you did not finish in this sprint. For issues/user stories in the current sprint that have not been closed, (a) any progress toward completion of the issues has been clearly tracked (by checking the checkboxes of  acceptance criteria), (b) a comment has been added to the issue to explain why the issue could not be completed (e.g., "we ran out of time" or "we did not anticipate it would be so much work"), and (c) the issue is added to a subsequent sprint, so that it can be addressed later.
+We did not complete the full integration of the official Go SignalHub repository due to ongoing security and access negotiations with the SEL team. Additionally, the VSCode extension requires a structural split between production and development branches to resolve slow build times caused by bundling the large 2.5GB SDK artifact.
 
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
- * URL of issue 1
- * URL of issue 2
- * URL of issue n
+ * [Implementation of CGo and Subprocess Python-to-Go wrappers]
+ * [Creation of Field SDK Troubleshooting and Environment Technology Guides]
+ * [Initial Prototype of VSCode Field SDK Extension]
 
- Reminders (Remove this section when you save the file):
-  * Each issue should be assigned to a milestone
-  * Each completed issue should be assigned to a pull request
-  * Each completed pull request should include a link to a "Before and After" video
-  * All team members who contributed to the issue should be assigned to it on GitHub
-  * Each issue should be assigned story points using a label
-  * Story points contribution of each team member should be indicated in a comment
- 
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
  
- * URL of issue 1 <<One sentence explanation of why issue was not completed>>
- * URL of issue 2 <<One sentence explanation of why issue was not completed>>
- * URL of issue n <<One sentence explanation of why issue was not completed>>
+ * [Access and wrap Go SignalHub repository] Access was blocked due to unresolved security concerns between the team and SEL.
+ * [Removal of all internal SEL dependencies from SDK] Several private packages remain embedded that require permanent external replacements or packaging.
  
- Examples of explanations (Remove this section when you save the file):
-  * "We ran into a complication we did not anticipate (explain briefly)." 
-  * "We decided that the feature did not add sufficient value for us to work on it in this sprint (explain briefly)."
-  * "We could not reproduce the bug" (explain briefly).
-  * "We did not get to this issue because..." (explain briefly)
-
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- * [Name of code file 1](https://github.com/your_repo/file_extension)
- * [Name of code file 2](https://github.com/your_repo/file_extension)
- * [Name of code file 3](https://github.com/your_repo/file_extension)
+ 
  
 ## Retrospective Summary
 Here's what went well:
-  * Item 1
-  * Item 2
-  * Item x
+  * Successfully built production-ready proofs-of-concept for cross-language integration.
+  * Gained a deep architectural understanding of Blueframe and SignalHub systems through direct code interaction
+  * Improved our ability to ask targeted technical questions and break down complex technological blockers.
  
 Here's what we'd like to improve:
-   * Item 1
-   * Item 2
-   * Item x
+   * The speed of our development cycle when working with large 2.5GB SDK artifacts.
+   * Reducing the time spent on technological onboarding for containerization tools like Kubernetes.
   
 Here are changes we plan to implement in the next sprint:
-   * Item 1
-   * Item 2
-   * Item x
+   * Transition to externally accessible services like DockerHub for SDK dependencies to ensure out-of-the-box functionality.
+   * Split the VSCode extension into production and development branches to improve build speed during the change-build-test cycle.
