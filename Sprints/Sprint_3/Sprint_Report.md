@@ -38,7 +38,7 @@ Please review the following code files, which were actively developed during thi
  * [VSCode 1-click Extension] (https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/extension)
  * [Python GO Wrapper](https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/python-wrapper)
  * [COMTRADE Go] (https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade.go)
- * [COMTRAED Go Tests](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade_test.go)
+ * [COMTRADE Go Tests](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade_test.go)
  
 ## Retrospective Summary
 Here's what went well:
