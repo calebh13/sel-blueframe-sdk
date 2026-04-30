@@ -1,4 +1,4 @@
-# Sprint x Report (Dates from Sprint 4/10 to Sprint 5/1)
+# Sprint 3 Report (Dates from Sprint 4/10 to Sprint 5/1)
 
 ## YouTube link of Sprint * Video (Make this video unlisted)
 
@@ -17,19 +17,28 @@ We did not complete the full integration of the official Go SignalHub repository
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
- * [Implementation of CGo and Subprocess Python-to-Go wrappers]
- * [Creation of Field SDK Troubleshooting and Environment Technology Guides]
- * [Initial Prototype of VSCode Field SDK Extension]
+ * [Implementation of CGo and Subprocess Python-to-Go wrappers](https://github.com/calebh13/sel-blueframe-sdk/issues/19)
+ * [Creation of Field SDK Troubleshooting and Environment Technology Guides](https://github.com/calebh13/sel-blueframe-sdk/issues/20)
+ * [Initial Prototype of VSCode Field SDK Extension] (https://github.com/calebh13/sel-blueframe-sdk/issues/21)
+ * [Implementation of Python Wrapping Reading Functionality](https://github.com/calebh13/sel-blueframe-sdk/issues/22)
+ * [Implementation of Python Wrapping Writing Functionality](https://github.com/calebh13/sel-blueframe-sdk/issues/23)
 
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
+ * https://github.com/calebh13/sel-blueframe-sdk/issues/7 -> Due to blockers with getting secure access to the Go SignalHub repository, we could not implement the publishing workflow
+* https://github.com/calebh13/sel-blueframe-sdk/issues/6 -> For the same blockers which prevented the full publishing workflow, the publishing function  could not be completed this sprint.
+* https://github.com/calebh13/sel-blueframe-sdk/issues/5 -> When we began sprint 2, we thought we would quickly have access to the existing codebase but did not anticipate all of the secure access issues. This prevented us from completeing the subscribe workflow and functions
+* https://github.com/calebh13/sel-blueframe-sdk/issues/4 -> When we began sprint 2, we thought we would quickly have access to the existing codebase but did not anticipate all of the secure access issues. This prevented us from completeing the subscribe workflow and functions
  
  * [Access and wrap Go SignalHub repository] Access was blocked due to unresolved security concerns between the team and SEL.
  * [Removal of all internal SEL dependencies from SDK] Several private packages remain embedded that require permanent external replacements or packaging.
  
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- 
+ * [VSCode 1-click Extension] (https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/extension)
+ * [Python GO Wrapper](https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/python-wrapper)
+ * [COMTRADE Go] (https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade.go)
+ * [COMTRAED Go Tests](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade_test.go)
  
 ## Retrospective Summary
 Here's what went well:
