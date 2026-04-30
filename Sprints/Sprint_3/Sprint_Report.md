@@ -35,9 +35,9 @@ Here are links to the issues that we completed in this sprint:
  
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- * [VSCode 1-click Extension] (https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/extension)
+ * [VSCode 1-click Extension](https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/extension)
  * [Python GO Wrapper](https://github.com/calebh13/sel-blueframe-sdk/tree/main/code/python-wrapper)
- * [COMTRADE Go] (https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade.go)
+ * [COMTRADE Go](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade.go)
  * [COMTRADE Go Tests](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/comtrade_test.go)
  
 ## Retrospective Summary
