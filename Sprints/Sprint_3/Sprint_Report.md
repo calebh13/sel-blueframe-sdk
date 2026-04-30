@@ -19,7 +19,7 @@ Here are links to the issues that we completed in this sprint:
 
  * [Implementation of CGo and Subprocess Python-to-Go wrappers](https://github.com/calebh13/sel-blueframe-sdk/issues/19)
  * [Creation of Field SDK Troubleshooting and Environment Technology Guides](https://github.com/calebh13/sel-blueframe-sdk/issues/20)
- * [Initial Prototype of VSCode Field SDK Extension] (https://github.com/calebh13/sel-blueframe-sdk/issues/21)
+ * [Initial Prototype of VSCode Field SDK Extension](https://github.com/calebh13/sel-blueframe-sdk/issues/21)
  * [Implementation of Python Wrapping Reading Functionality](https://github.com/calebh13/sel-blueframe-sdk/issues/22)
  * [Implementation of Python Wrapping Writing Functionality](https://github.com/calebh13/sel-blueframe-sdk/issues/23)
 
