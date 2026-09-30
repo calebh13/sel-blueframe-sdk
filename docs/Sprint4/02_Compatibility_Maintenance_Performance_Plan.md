@@ -3,7 +3,7 @@
 **Sprint 4 Deliverable 2**  
 **Owner:** Caleb Hansen  
 **Contributors:** Lucas Phillips (benchmarks and failure tests)  
-**Status:** Reviewed with the client on September 28, 2026
+**Status:** Reviewed with the client on September 28, 2026. Joe agreed that moving to the C# implementation is the correct move.
 
 > The SignalHub client code is SEL Confidential. This plan describes findings and targets without SEL source code or internal names.
 
@@ -104,4 +104,4 @@ Estimated effort for a new operation today is 40 to 60 lines, mostly mechanical.
 - Can Blueframe apps start child processes?
 - Which Windows versions do engineers use?
 - Is a real Signal Hub available for compatibility testing?
-- Would SEL prefer the C# client if it avoids most of the glue code? This is being evaluated in Sprint 5.
+- The compatibility matrix needs to be redone for the C# client and the .NET runtime in Sprint 5, now that Joe has agreed to move to it.

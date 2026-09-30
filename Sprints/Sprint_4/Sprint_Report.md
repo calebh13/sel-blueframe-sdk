@@ -4,20 +4,21 @@
 [Video link placeholder, to be added after recording]
 
 ## What's New (User Facing)
- * Working Python prototype that publishes, subscribes, fetches history, and discovers signals through SEL's Go SignalHub client
+ * Working Python prototype that publishes, subscribes, fetches history, and discovers signals through SEL's Go SignalHub client, covering every operation in the agreed scope ([overview](../../docs/Sprint4/05_Prototype_Overview.md))
+ * Go code for the prototype, made up of a facade over SEL's client, a C interface with 23 functions, a gRPC bridge with 21 calls, and a fake Signal Hub for testing
  * Side by side comparison of three ways to call the Go client from Python (ctypes, cffi, and a gRPC subprocess bridge)
  * Fake Signal Hub and a 2,155 test suite that passes on all three transports
  * [Python Binding Requirements and Architecture Plan](../../docs/Sprint4/01_Python_Binding_Architecture_Plan.md) with a proposed Python API
  * [Compatibility, Maintenance, and Performance Plan](../../docs/Sprint4/02_Compatibility_Maintenance_Performance_Plan.md) with benchmark results
  * [Testing and Development Process Plan](../../docs/Sprint4/03_Testing_and_Development_Process_Plan.md)
  * [Documentation and Extensibility Plan](../../docs/Sprint4/04_Documentation_and_Extensibility_Plan.md)
- * C# with Python.NET identified as a possibly simpler base for the SDK
+ * C# with Python.NET chosen as the base for the SDK, with the client's agreement
 
 ## Work Summary (Developer Facing)
-Sprint 4 was planned as an investigation sprint, and most of the research behind the Python SDK is now done. The access problem that blocked Sprints 2 and 3 was cleared early on. Genevieve got access to the C# and C++ versions of the client and pulled the Go client out of the server code, and she also set up our meetings with Joe. Caleb put the Go client in a private repo and wrote Claude skills to speed up onboarding to it. He then worked through why the original CGo plan breaks down for this client, looking at object lifetimes, callbacks, concurrency, and generics. Lucas took the bridge research further and built a working prototype with three transports behind one Python API, a fake Signal Hub, and a test suite that runs on every transport. That work also showed why the Go codebase is a poor fit for wrapping, since most of the effort went into glue code instead of features. Genevieve's Python.NET research suggests the C# client could avoid most of that glue. [PLACEHOLDER, replace with Darron's actual contribution] Darron Li spearheaded cross-functional alignment on the documentation strategy, proactively socializing best-in-class conventions and driving stakeholder synergy across the extensibility roadmap. The biggest lesson for the team was that the approach that looked easiest on paper, a script that adds export lines to Go functions, was the most fragile one once it was tested.
+Sprint 4 was planned as an investigation sprint, and most of the research behind the Python SDK is now done. The access problem that blocked Sprints 2 and 3 was cleared early on. Genevieve got access to the C# and C++ versions of the client and pulled the Go client out of the server code, and she also set up our meetings with Joe. Caleb put the Go client in a private repo and wrote Claude skills to speed up onboarding to it. He then worked through why the original CGo plan breaks down for this client, looking at object lifetimes, callbacks, concurrency, and generics. Lucas took the bridge research further and built a working prototype with three transports behind one Python API, a fake Signal Hub, and a test suite that runs on every transport. That work also showed why the Go codebase is a poor fit for wrapping, since most of the effort went into glue code instead of features. Genevieve's Python.NET research showed the C# client avoids most of that glue. Joe was very happy with the research and agreed that moving to the C# implementation is the correct move, and after the sprint's final test run he told us it meets his preferences. [PLACEHOLDER, replace with Darron's actual contribution] Darron Li spearheaded cross-functional alignment on the documentation strategy, proactively socializing best-in-class conventions and driving stakeholder synergy across the extensibility roadmap. The biggest lesson for the team was that the approach that looked easiest on paper, a script that adds export lines to Go functions, was the most fragile one once it was tested.
 
 ## Unfinished Work
-The hands-on evaluation of the C# client was not finished. Genevieve's Python.NET research is done, but running the C# client against the fake Signal Hub and repeating the benchmarks did not fit in the sprint. That issue has a comment explaining why and was moved to the Sprint 5 milestone. The prototype has also not been run against a real Signal Hub or on Windows yet. Both are part of the Sprint 5 compatibility work.
+Hands-on work with the C# client has not started. Genevieve's Python.NET research is done and Joe agreed on the move to C#, but running the C# client against the fake Signal Hub and repeating the benchmarks did not fit in the sprint. That issue has a comment explaining why and was moved to the Sprint 5 milestone. The prototype has also not been run against a real Signal Hub or on Windows yet. Both are part of the Sprint 5 compatibility work.
 
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
@@ -37,7 +38,7 @@ Here are links to the issues that we completed in this sprint:
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
  
- * https://github.com/calebh13/sel-blueframe-sdk/issues/36 We did not get to the hands-on test because the Python.NET research took most of the sprint, so running the C# client against the fake Signal Hub moved to Sprint 5.
+ * https://github.com/calebh13/sel-blueframe-sdk/issues/36 We did not get to the hands-on work because the Python.NET research took most of the sprint, so running the C# client against the fake Signal Hub moved to Sprint 5.
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
@@ -45,7 +46,7 @@ Please review the following code files, which were actively developed during thi
  * [Compatibility, Maintenance, and Performance Plan](https://github.com/calebh13/sel-blueframe-sdk/blob/main/docs/Sprint4/02_Compatibility_Maintenance_Performance_Plan.md)
  * [Testing and Development Process Plan](https://github.com/calebh13/sel-blueframe-sdk/blob/main/docs/Sprint4/03_Testing_and_Development_Process_Plan.md)
  * [Documentation and Extensibility Plan](https://github.com/calebh13/sel-blueframe-sdk/blob/main/docs/Sprint4/04_Documentation_and_Extensibility_Plan.md)
- * [Python SDK prototype (private repo, SEL Confidential)](https://github.com/calebh13/gosignals/tree/pysdk-research/pysdk)
+ * [Sprint 4 Prototype Overview](https://github.com/calebh13/sel-blueframe-sdk/blob/main/docs/Sprint4/05_Prototype_Overview.md)
  
 ## Retrospective Summary
 Here's what went well:
@@ -59,6 +60,6 @@ Here's what we'd like to improve:
    * Nothing has been tested against a real Signal Hub, so some findings may not hold up in deployment.
   
 Here are changes we plan to implement in the next sprint:
-   * Run the C# and Python.NET evaluation in the first week of Sprint 5, before building the bindings.
+   * Start moving the SDK onto the C# client in the first week of Sprint 5.
    * Push prototype work to the private repo as it happens.
    * Ask Joe for access to a real Signal Hub and a Windows machine for testing.

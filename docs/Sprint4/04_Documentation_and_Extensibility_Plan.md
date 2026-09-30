@@ -2,7 +2,7 @@
 
 **Sprint 4 Deliverable 4**  
 **Owner:** Darron Li  
-**Status:** Structure and conventions defined. Pages will be written in Sprints 5 and 6.
+**Status:** Reviewed with the client on September 28, 2026. Structure and conventions are defined, and pages will be written in Sprints 5 and 6.
 
 ## 1. Purpose
 
@@ -108,4 +108,4 @@ Renamed or removed Python functions stay for one minor release with a `Deprecati
 
 - Where will SEL host the docs internally?
 - Does SEL have a required docs tool or style guide?
-- If the SDK moves to the C# client, can its XML doc comments feed the Python reference pages?
+- Now that the SDK is moving to the C# client, can its XML doc comments feed the Python reference pages?

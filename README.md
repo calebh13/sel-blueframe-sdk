@@ -14,7 +14,7 @@ Blueframe is SEL's hardened, Linux-based operating system for automation and mon
 
 The SDK does not port the protocol to Python. A third copy of the client would drift from the other two and double the maintenance work. Instead, the Python SDK wraps an existing client and hides the Go or C# details behind a small Python API that takes and returns numpy arrays and raises normal Python exceptions.
 
-Sprint 4 tested three ways of wrapping the Go client (ctypes, cffi, and a gRPC subprocess bridge). All three worked, but only the bridge keeps a crash in the Go code from taking down the engineer's Python session. The research also found that most of the effort with Go goes into glue code, so the C# client with Python.NET is being evaluated at the start of Sprint 5 before the bindings are built. The details are in the [Sprint 4 planning documents](docs/Sprint4/).
+Sprint 4 tested three ways of wrapping the Go client (ctypes, cffi, and a gRPC subprocess bridge). All three worked, but only the bridge keeps a crash in the Go code from taking down the engineer's Python session. The research also found that most of the effort with Go goes into glue code. Joe agreed that moving to the C# client with Python.NET is the correct move, so Sprint 5 builds the bindings on the C# client. The details are in the [Sprint 4 planning documents](docs/Sprint4/).
 
 ## Installation
 
@@ -104,6 +104,7 @@ This repo will eventually be SEL confidential so it should not be open to public
   * [Sprint 4 Compatibility, Maintenance, and Performance Plan](docs/Sprint4/02_Compatibility_Maintenance_Performance_Plan.md)
   * [Sprint 4 Testing and Development Process Plan](docs/Sprint4/03_Testing_and_Development_Process_Plan.md)
   * [Sprint 4 Documentation and Extensibility Plan](docs/Sprint4/04_Documentation_and_Extensibility_Plan.md)
+  * [Sprint 4 Prototype Overview](docs/Sprint4/05_Prototype_Overview.md)
   * [Sprint 4 Minutes of Meetings](Sprints/Sprint_4/MoM/)
   * [Project Description](Reports/01_Project_Description.pdf) and [Requirements and Specifications](Reports/02_Requirements_and_Specifications.pdf)
   * Sprint videos for [Sprint 1](https://youtu.be/a1FaINWTAow), [Sprint 2](https://youtu.be/2cOXRF26fVw), and [Sprint 3](https://youtu.be/-EzL6DnFo0w)
