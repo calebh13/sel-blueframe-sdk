@@ -3,7 +3,7 @@
 **Sprint 4 Deliverable 1**  
 **Owner:** Lucas Phillips  
 **Contributors:** Genevieve Kochel (C# and Python.NET research)  
-**Status:** Reviewed with the client on September 28, 2026
+**Status:** Reviewed with the client on September 28, 2026. Joe was very happy with the research and agreed that moving to the C# implementation is the correct move.
 
 > The SignalHub client code is SEL Confidential. This document describes the approach and results without SEL source code or internal names. The prototype code is kept in the team's private repository.
 
@@ -138,14 +138,14 @@ Some problems carry over. Forking after the .NET runtime loads is also unsafe. A
 
 ## 10. Recommendation
 
-1. Evaluate the C# client with Python.NET early in Sprint 5. This is a one to two day check against the fake Signal Hub, using the same benchmarks and failure tests.
-2. If the C# client passes, build the SDK on it.
-3. If the team stays with Go, build on the subprocess bridge. ctypes and cffi should not be used for production.
-4. Either way, keep the Python API design, the fake Signal Hub, and the test suite. None of them depend on Go.
+1. Move the SDK to the C# client with Python.NET. Joe agreed with this on September 28.
+2. Start Sprint 5 by running the C# client against the fake Signal Hub with the same benchmarks and failure tests, so any blocker shows up early.
+3. Keep the Go subprocess bridge as the fallback. ctypes and cffi should not be used for production.
+4. Keep the Python API design, the fake Signal Hub, and the test suite. None of them depend on Go.
 
 ## 11. Unresolved Questions
 
-- Does the C# client run on Linux with a modern .NET version?
+- Does the C# client run on Linux with a modern .NET version? This is the first check in Sprint 5.
 - Can target machines start a child process for the bridge?
 - Which operating systems do engineers use day to day?
 - Is a real Signal Hub available for testing before Sprint 6?
