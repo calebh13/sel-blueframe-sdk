@@ -1,7 +1,7 @@
 # Sprint 4 Report (Dates from Sprint 8/27 to Sprint 9/30)
 
-## YouTube link of Sprint 4 Video (Make this video unlisted)
-[Video link placeholder, to be added after recording]
+## YouTube link of Sprint 4 Video
+https://www.youtube.com/watch?v=aWu-euDfJv8
 
 ## What's New (User Facing)
  * Working Python prototype that publishes, subscribes, fetches history, and discovers signals through SEL's Go SignalHub client, covering every operation in the agreed scope ([overview](../../docs/Sprint4/05_Prototype_Overview.md))
