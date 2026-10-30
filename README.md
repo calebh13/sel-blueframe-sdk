@@ -16,7 +16,7 @@ The SDK does not port the protocol to Python. A third copy of the client would d
 
 Sprint 4 tested three ways of wrapping the Go client (ctypes, cffi, and a gRPC subprocess bridge). All three worked, but only the bridge keeps a crash in the Go code from taking down the engineer's Python session. The research also found that most of the effort with Go goes into glue code. Joe agreed that moving to the C# client with Python.NET is the correct move. The details are in the [Sprint 4 planning documents](docs/Sprint4/).
 
-In Sprint 5 the C# client was not available yet, so the Go bridge stayed as the working SDK and was hardened so it recovers from its own crash. A Python.NET spike with a stand-in C# class measured what the C# path will look like, and a new CI workflow runs real tests on Linux and Windows. See the [Sprint 5 report](Sprints/Sprint_5/Sprint_Report.md).
+In Sprint 5 the C# client was not available yet, so the Go bridge stayed as the working SDK and was hardened so it recovers from its own crash. A Python.NET spike with a stand-in C# class measured what the C# path will look like, and the team CI pipeline runs on every push. See the [Sprint 5 report](Sprints/Sprint_5/Sprint_Report.md).
 
 ## Installation
 
@@ -116,10 +116,9 @@ Install the `.vsix` from the Extensions menu and run **BlueFrame SDK: Launch** f
 ## Known Problems
 
 * The Python SDK prototype has only been tested against a fake Signal Hub. It has not been run against a real Signal Hub yet.
-* The Go bridge has not been run on Windows. The Python.NET spike and the COMTRADE code pass on Windows in CI.
+* The Go bridge has not been run on Windows.
 * SEL's C# client has not been tested yet. Only a stand-in C# class has been called from Python.
 * A fatal .NET error kills the Python process, like the ctypes transport. Run `.venv/bin/python spike.py` and look at `crash_in_child_exit_code` to see it.
-* `.github/workflows/ci.yml` only prints messages and passes even when a build fails. Use `.github/workflows/tests.yml` for test results.
 * The ctypes and cffi transports crash the Python process if the Go client exits or panics, and they hang in fork-based worker pools. ctypes is still the default, so pass `transport="bridge"` to `gs.connect`.
 * Building the VS Code extension is slow because it bundles the 2.5 GB Field SDK archive.
 
