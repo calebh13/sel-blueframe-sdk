@@ -48,7 +48,7 @@ Here are links to the issues that we completed in this sprint:
  * https://github.com/calebh13/sel-blueframe-sdk/issues/44
  * https://github.com/calebh13/sel-blueframe-sdk/issues/45
 
-These are finished and waiting for a reviewer on the Sprint 5 pull request. They close when it is merged.
+These are finished and waiting for a reviewer on [PR #51](https://github.com/calebh13/sel-blueframe-sdk/pull/51). They close when it is merged.
 
  * https://github.com/calebh13/sel-blueframe-sdk/issues/46
  * https://github.com/calebh13/sel-blueframe-sdk/issues/47
