@@ -15,7 +15,7 @@ Blueframe is SEL's container based platform for operational technology. It runs 
 
 | Step | Status |
 |---|---|
-| CI that runs real tests on every push, Linux and Windows | Done. [Tests workflow](../../.github/workflows/tests.yml), [run 41144016907](https://github.com/calebh13/sel-blueframe-sdk/actions/runs/41144016907) |
+| Team CI pipeline on every push | Done. [ci.yml](../../.github/workflows/ci.yml) |
 | SDK runs end to end against the fake Signal Hub | Done. 2,161 tests and the pub/sub example, October 30 |
 | Demo app for client walkthroughs | Done, local only ([issue #45](https://github.com/calebh13/sel-blueframe-sdk/issues/45)) |
 | SDK installed inside the Field SDK devcontainer | Not done |
