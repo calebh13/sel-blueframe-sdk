@@ -27,6 +27,5 @@ Total about 14:30.
 
 ## Before recording
 
-* Darron's spots are marked `<placeholder>` on slides 2, 4, 10 and 11 and in the report and MoMs.
 * For the live demo on slide 6, start `./build/testhub` in `gosignals/pysdk`, run `docs/Sprint5/examples/pubsub_example.py` with the hub port, then open the demo app with `PYTHONPATH=python python3 demo/server.py`.
 * Upload the video as unlisted and put the link at the top of the Sprint 5 report.
