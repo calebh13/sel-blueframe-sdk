@@ -14,7 +14,9 @@ Blueframe is SEL's hardened, Linux-based operating system for automation and mon
 
 The SDK does not port the protocol to Python. A third copy of the client would drift from the other two and double the maintenance work. Instead, the Python SDK wraps an existing client and hides the Go or C# details behind a small Python API that takes and returns numpy arrays and raises normal Python exceptions.
 
-Sprint 4 tested three ways of wrapping the Go client (ctypes, cffi, and a gRPC subprocess bridge). All three worked, but only the bridge keeps a crash in the Go code from taking down the engineer's Python session. The research also found that most of the effort with Go goes into glue code. Joe agreed that moving to the C# client with Python.NET is the correct move, so Sprint 5 builds the bindings on the C# client. The details are in the [Sprint 4 planning documents](docs/Sprint4/).
+Sprint 4 tested three ways of wrapping the Go client (ctypes, cffi, and a gRPC subprocess bridge). All three worked, but only the bridge keeps a crash in the Go code from taking down the engineer's Python session. The research also found that most of the effort with Go goes into glue code. Joe agreed that moving to the C# client with Python.NET is the correct move. The details are in the [Sprint 4 planning documents](docs/Sprint4/).
+
+In Sprint 5 the C# client was not available yet, so the Go bridge stayed as the working SDK and was hardened so it recovers from its own crash. A Python.NET spike with a stand-in C# class measured what the C# path will look like, and the team CI pipeline runs on every push. See the [Sprint 5 report](Sprints/Sprint_5/Sprint_Report.md).
 
 ## Installation
 
@@ -29,7 +31,7 @@ The Python SDK prototype also needs the following.
 * gcc, only for the ctypes and cffi transports
 * Access to the team's private SignalHub client repository, since the client is SEL Confidential
 
-The COMTRADE code in `code/` needs Go 1.21 or newer. The VS Code extension in `code/extension` needs Node.js, VS Code, Docker, and the Dev Containers extension.
+The COMTRADE code in `code/` needs Go 1.21 or newer. The Python.NET spike in `code/pythonnet-spike` needs Python 3.10 to 3.13 and the .NET 10 SDK. The VS Code extension in `code/extension` needs Node.js, VS Code, Docker, and the Dev Containers extension.
 
 ### Add-ons
 
@@ -38,10 +40,38 @@ The COMTRADE code in `code/` needs Go 1.21 or newer. The VS Code extension in `c
 * **cffi** loads the Go shared library for the cffi transport.
 * **pytest** and **pytest-timeout** run the test suite and stop tests that hang.
 * **@vscode/vsce** packages the VS Code extension.
+* **pythonnet** loads the .NET runtime into Python and calls C# classes for the Python.NET spike.
 
 ### Installation Steps
 
-Confidential. The Python SDK prototype and its build steps are kept in SEL's private repository.
+The Python SDK and its build steps are in SEL's private repository because the client is SEL Confidential. They are in the [user guide](docs/Sprint5/01_User_Guide.md) for people with access.
+
+The public parts of this repo install like this, from a fresh clone on Linux. The same commands work on Windows with `.venv\Scripts\python` in place of `.venv/bin/python`.
+
+```bash
+git clone https://github.com/calebh13/sel-blueframe-sdk.git
+cd sel-blueframe-sdk
+```
+
+COMTRADE reader and writer tests.
+
+```bash
+cd code
+go test ./...
+cd ..
+```
+
+Python.NET spike.
+
+```bash
+cd code/pythonnet-spike
+python3 -m venv .venv
+.venv/bin/pip install pythonnet numpy pytest
+dotnet build csharp -c Release
+.venv/bin/python -m pytest test_spike.py -v
+.venv/bin/python spike.py
+cd ../..
+```
 
 ## Functionality
 
@@ -68,9 +98,10 @@ Timestamps are int64 nanoseconds. Errors from the Go client come back as `gs.GoS
 
 ```bash
 cd code
-go mod init comtrade
 go test ./...
 ```
+
+**Python.NET spike.** `code/pythonnet-spike` calls a stand-in C# hub class from Python to measure call cost, array copies, generic methods, callbacks and error handling. The results are in its [README](code/pythonnet-spike/README.md).
 
 **VS Code extension.** `code/extension` extracts the Blueframe Field SDK, runs the SDK manager, and opens the devcontainer. Put `field-sdk.tgz` in `code/extension`, then package and install it.
 
@@ -85,9 +116,10 @@ Install the `.vsix` from the Extensions menu and run **BlueFrame SDK: Launch** f
 ## Known Problems
 
 * The Python SDK prototype has only been tested against a fake Signal Hub. It has not been run against a real Signal Hub yet.
-* Windows has not been tested.
+* The Go bridge has not been run on Windows.
+* SEL's C# client has not been tested yet. Only a stand-in C# class has been called from Python.
+* A fatal .NET error kills the Python process, like the ctypes transport. Run `.venv/bin/python spike.py` and look at `crash_in_child_exit_code` to see it.
 * The ctypes and cffi transports crash the Python process if the Go client exits or panics, and they hang in fork-based worker pools. ctypes is still the default, so pass `transport="bridge"` to `gs.connect`.
-* `code/comtrade.go` has no `go.mod`, so `go test` fails until `go mod init` is run in `code/`.
 * Building the VS Code extension is slow because it bundles the 2.5 GB Field SDK archive.
 
 ## Contributing
@@ -100,6 +132,11 @@ This repo will eventually be SEL confidential so it should not be open to public
   * [Sprint 2 Report](https://github.com/calebh13/sel-blueframe-sdk/blob/main/Sprints/Sprint2/Sprint_Report.md)
   * [Sprint 3 Report](https://github.com/calebh13/sel-blueframe-sdk/blob/main/Sprints/Sprint_3/Sprint_Report.md)
   * [Sprint 4 Report](https://github.com/calebh13/sel-blueframe-sdk/blob/main/Sprints/Sprint_4/Sprint_Report.md)
+  * [Sprint 5 Report](Sprints/Sprint_5/Sprint_Report.md)
+  * [Sprint 5 User Guide](docs/Sprint5/01_User_Guide.md)
+  * [Sprint 5 Compatibility Matrix](docs/Sprint5/02_Compatibility_Matrix.md)
+  * [Sprint 5 Deployment Plan](docs/Sprint5/03_Deployment_Plan.md)
+  * [Sprint 5 Minutes of Meetings](Sprints/Sprint_5/MoM/)
   * [Sprint 4 Python Binding Requirements and Architecture Plan](docs/Sprint4/01_Python_Binding_Architecture_Plan.md)
   * [Sprint 4 Compatibility, Maintenance, and Performance Plan](docs/Sprint4/02_Compatibility_Maintenance_Performance_Plan.md)
   * [Sprint 4 Testing and Development Process Plan](docs/Sprint4/03_Testing_and_Development_Process_Plan.md)
@@ -107,7 +144,7 @@ This repo will eventually be SEL confidential so it should not be open to public
   * [Sprint 4 Prototype Overview](docs/Sprint4/05_Prototype_Overview.md)
   * [Sprint 4 Minutes of Meetings](Sprints/Sprint_4/MoM/)
   * [Project Description](Reports/01_Project_Description.pdf) and [Requirements and Specifications](Reports/02_Requirements_and_Specifications.pdf)
-  * Sprint videos for [Sprint 1](https://youtu.be/a1FaINWTAow), [Sprint 2](https://youtu.be/2cOXRF26fVw), and [Sprint 3](https://youtu.be/-EzL6DnFo0w)
+  * Sprint videos for [Sprint 1](https://youtu.be/a1FaINWTAow), [Sprint 2](https://youtu.be/2cOXRF26fVw), [Sprint 3](https://youtu.be/-EzL6DnFo0w), and [Sprint 4](https://www.youtube.com/watch?v=aWu-euDfJv8)
   * [Python wrapper demo video](https://youtu.be/ylGSQu6aIVY)
   * [Google Drive with Additional Documentation](https://drive.google.com/drive/u/1/folders/1l-EKSdQvaO1z8Cdv-wOVbb2EH3CFL6S-)
 
