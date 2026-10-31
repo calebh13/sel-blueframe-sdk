@@ -8,11 +8,11 @@ Follows the Sprint 5 video template order. The template's suggested times add up
 | 2 | Introduction | 1. Introduction | Lucas | 0:45 |
 | 3 | Sprint Objectives | 2. Sprint objectives | Caleb | 0:45 |
 | 4 | Feature Implementation and Demonstration | 3. Features and demos | Lucas | 0:30 |
-| 5 | Feature: Bridge Crash Recovery | 3. Features and demos | Lucas | 1:00 |
-| 6 | Demo: Publish and Subscribe from Python | 3. Features and demos | Lucas | 1:00 |
-| 7 | Feature: Python.NET Spike | 3. Features and demos | Genevieve | 1:15 |
+| 5 | Bridge Crash Recovery | 3. Features and demos | Lucas | 1:00 |
+| 6 | Publish and Subscribe Demo | 3. Features and demos | Lucas | 1:00 |
+| 7 | Python.NET Evaluation | 3. Features and demos | Genevieve | 1:15 |
 | 8 | Deployment of the System | 4. Deployment and feedback | Caleb | 1:15 |
-| 9 | Deployment: CI/CD and Compatibility | 4. Deployment and feedback | Caleb | 0:45 |
+| 9 | Deployment CI/CD and Compatibility | 4. Deployment and feedback | Caleb | 0:45 |
 | 10 | User Testing and Feedback from the Client | 4. Deployment and feedback | Genevieve | 0:45 |
 | 11 | Kanban Overview & Team Contributions | 5. Kanban | Darron | 0:45 |
 | 12 | Evidence of MoM with Clients | 6. MoM | Darron | 0:45 |
