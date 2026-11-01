@@ -1,7 +1,7 @@
 # Sprint 5 Report (Dates from Sprint 10/1 to Sprint 10/31)
 
-## YouTube link of Sprint 5 Video (Make this video unlisted)
-[Video link placeholder, to be added after recording]
+## YouTube link of Sprint 5 Video
+[https://youtu.be/2oUGGHlFGZo]
 
 ## What's New (User Facing)
  * The bridge transport survives a crash. With `auto_restart=True` a dead bridge is restarted, subscriptions pick up from the last timestamp with no gaps or duplicates, and publishers report the restart once
