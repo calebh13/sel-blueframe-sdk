@@ -12,8 +12,11 @@ You need the following.
 * Go 1.25 or newer, to build the bridge and the fake Signal Hub
 * Read access to the private `gosignals` repository
 
+Clone both repositories into the same folder. The example in section 3 is run from this repo with a relative path, so it fails if `sel-blueframe-sdk` is not next to `gosignals`.
+
 ```bash
 git clone https://github.com/calebh13/gosignals.git
+git clone https://github.com/calebh13/sel-blueframe-sdk.git
 cd gosignals/pysdk
 python3 -m venv .venv
 .venv/bin/pip install numpy grpcio protobuf
