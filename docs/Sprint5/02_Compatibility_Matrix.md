@@ -16,11 +16,11 @@ Agreed baseline with the client: Python 3.12 (kickoff meeting, September 14). Su
 | Linux aarch64 | any | bridge | Builds, tests not run | Cross-compiled October 31, 2026, see the roadmap below |
 | Blueframe device | any | bridge | Not tested | Needs SEL hardware, see the [deployment plan](03_Deployment_Plan.md) |
 
-Total 2,161 passed, 0 failed, in 300 s. numpy 2.5.4, grpcio 1.85.1, protobuf 7.36.2, pytest 9.2.0. The test log stays with the private repo because test names include client internals.
+Total 2,161 passed, 0 failed, in 300 s. numpy 2.5.4, grpcio 1.85.1, protobuf 7.36.2, pytest 9.2.0. The test log stays with the private repo because test names include client internals. The [run summary](evidence/suite_summary.png) only has the totals, and the [pub/sub example output](evidence/pubsub_example_output.txt) is from the same day. The team CI pipeline also passed on the Sprint 5 branch ([run 41146542375 log](evidence/ci_run_41146542375.log)).
 
 ## Python.NET spike (public, `code/pythonnet-spike`)
 
-Six tests, plus the timing script. [CI run 41144016907](https://github.com/calebh13/sel-blueframe-sdk/actions/runs/41144016907).
+Six tests, plus the timing script. [CI run 41144016907](https://github.com/calebh13/sel-blueframe-sdk/actions/runs/41144016907). The local numbers come from [three timing runs](evidence/pythonnet_spike_runs.txt) and a [fresh clone test](evidence/fresh_clone_readme_test.txt).
 
 | Platform | Python | .NET | Tests | Call cost | Callbacks/s |
 |---|---|---|---|---|---|

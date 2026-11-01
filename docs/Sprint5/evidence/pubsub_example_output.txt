@@ -1,0 +1,3 @@
+published 600 samples
+subscriber received 600 samples, finished: True
+fetch returned 600 samples, first three [0.         0.10452846 0.20791169]
