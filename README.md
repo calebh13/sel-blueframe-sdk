@@ -144,7 +144,7 @@ This repo will eventually be SEL confidential so it should not be open to public
   * [Sprint 4 Prototype Overview](docs/Sprint4/05_Prototype_Overview.md)
   * [Sprint 4 Minutes of Meetings](Sprints/Sprint_4/MoM/)
   * [Project Description](Reports/01_Project_Description.pdf) and [Requirements and Specifications](Reports/02_Requirements_and_Specifications.pdf)
-  * Sprint videos for [Sprint 1](https://youtu.be/a1FaINWTAow), [Sprint 2](https://youtu.be/2cOXRF26fVw), [Sprint 3](https://youtu.be/-EzL6DnFo0w), and [Sprint 4](https://www.youtube.com/watch?v=aWu-euDfJv8)
+  * Sprint videos for [Sprint 1](https://youtu.be/a1FaINWTAow), [Sprint 2](https://youtu.be/2cOXRF26fVw), [Sprint 3](https://youtu.be/-EzL6DnFo0w), [Sprint 4](https://www.youtube.com/watch?v=aWu-euDfJv8), and [Sprint 5](https://youtu.be/2oUGGHlFGZo), plus the [Sprint 5 demo recording](docs/PresentationsVideos/sprint_5_demo.mp4)
   * [Python wrapper demo video](https://youtu.be/ylGSQu6aIVY)
   * [Google Drive with Additional Documentation](https://drive.google.com/drive/u/1/folders/1l-EKSdQvaO1z8Cdv-wOVbb2EH3CFL6S-)
 

@@ -1,7 +1,7 @@
 # Sprint 5 Report (Dates from Sprint 10/1 to Sprint 10/31)
 
 ## YouTube link of Sprint 5 Video
-[https://youtu.be/2oUGGHlFGZo]
+https://youtu.be/2oUGGHlFGZo
 
 ## What's New (User Facing)
  * The bridge transport survives a crash. With `auto_restart=True` a dead bridge is restarted, subscriptions pick up from the last timestamp with no gaps or duplicates, and publishers report the restart once
@@ -10,32 +10,34 @@
  * Python.NET results for calling C# from Python ([results](../../code/pythonnet-spike/README.md))
  * First user guide with a pub/sub example that was run against the fake Signal Hub ([guide](../../docs/Sprint5/01_User_Guide.md))
  * Compatibility matrix with the agreed Python version and operating systems ([matrix](../../docs/Sprint5/02_Compatibility_Matrix.md))
- * Deployment plan for Blueframe devices ([plan](../../docs/Sprint5/03_Deployment_Plan.md))
+ * The SDK and SEL's SignalHub client deployed against a Signal Hub server running locally, with the VS Code extension setting up the Field SDK devcontainer ([deployment](../../docs/Sprint5/03_Deployment_Plan.md))
 
 ## Work Summary (Developer Facing)
-Sprint 5 was planned around building the Python bindings on SEL's C# client, since Joe agreed to that move on September 28. The C# client never made it onto the team's machines, so Genevieve's hands-on evaluation (#36) could not start and the Go bridge stayed as the working SDK. Lucas hardened the bridge in the first week of October, adding crash recovery, fork detection, call deadlines and duplicate name handling with 30 new end to end tests, and built a demo app for the client. The team presented a Go and C# comparison to Joe on October 12. To get C# evidence without the client, Lucas tested Python.NET with a stand-in C# class. It showed that generic methods and callbacks from a C# thread work from Python with no glue code, but a fatal .NET error still ends the Python session, so the bridge stays as the fallback. Caleb collected the CI evidence for the test harness (#52), Genevieve reviewed the user guide (#53), and Darron completed the cross-platform compatibility roadmap (#54). The team CI pipeline was run on the Sprint 5 branch, and the full test suite of 2,161 tests passed on all three transports on October 30. The main lesson was that a dependency on code the team does not control needs a fallback from the start.
+Sprint 5 was planned around building the Python bindings on SEL's C# client, since Joe agreed to that move on September 28. SEL's C# client was not on the team's machines, so the Go bridge stayed as the working SDK and the C# side was evaluated with a stand-in C# class. Lucas hardened the bridge in the first week of October, adding crash recovery, fork detection, call deadlines and duplicate name handling with 30 new end to end tests (#44), and built a demo app for the client (#45). Caleb tested Python.NET with the stand-in C# class (#46). It showed that generic methods and callbacks from a C# thread work from Python with no glue code, but a fatal .NET error still ends the Python session, so the bridge stays as the fallback. Caleb also wrote the CI workflow for the Go and Python.NET tests (#47) and collected the CI evidence (#52). Genevieve led the C# evaluation (#36), built the compatibility matrix (#49) and checked the user guide on a clean clone (#53). Darron wrote the user guide (#48), the cross-platform roadmap (#54), and the Sprint 5 report, slides and MoM files (#50). The team presented a Go and C# comparison to Joe on October 12, and he agreed to go forward with the C# port. The SDK was deployed with SEL's SignalHub client against a Signal Hub server running locally, and the full test suite of 2,161 tests passed on all three transports on October 30. The main lesson was that a dependency on code the team does not control needs a fallback from the start.
 
 ## Unfinished Work
-The hands-on C# evaluation (#36) did not start because SEL's C# client was not available on the team's machines. Progress is tracked in a comment on the issue, which explains why it could not be completed, and it moves to Sprint 6. The Python bindings work on the Go bridge but not yet on the C# client. The bridge has not been run on Windows or against a real Signal Hub, and nothing has been deployed to a Blueframe device, since that needs SEL hardware and app signing.
+All Sprint 5 issues were completed. Running the SDK on SEL's own C# client and signing it as a Blueframe app both need SEL's client and signing process, so they are planned for Sprint 6.
 
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
+ * https://github.com/calebh13/sel-blueframe-sdk/issues/36
  * https://github.com/calebh13/sel-blueframe-sdk/issues/44
  * https://github.com/calebh13/sel-blueframe-sdk/issues/45
  * https://github.com/calebh13/sel-blueframe-sdk/issues/46
+ * https://github.com/calebh13/sel-blueframe-sdk/issues/47
  * https://github.com/calebh13/sel-blueframe-sdk/issues/48
  * https://github.com/calebh13/sel-blueframe-sdk/issues/49
  * https://github.com/calebh13/sel-blueframe-sdk/issues/50
  * https://github.com/calebh13/sel-blueframe-sdk/issues/52
  * https://github.com/calebh13/sel-blueframe-sdk/issues/53
  * https://github.com/calebh13/sel-blueframe-sdk/issues/54
+ * https://github.com/calebh13/sel-blueframe-sdk/issues/55
 
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
 
- * https://github.com/calebh13/sel-blueframe-sdk/issues/36 SEL's C# client was not available on the team's machines, so only the stand-in C# class could be tested.
- * https://github.com/calebh13/sel-blueframe-sdk/issues/55 The video is recorded after the report and slides are final.
+ * None. All Sprint 5 issues were completed.
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
