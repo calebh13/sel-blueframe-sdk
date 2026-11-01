@@ -12,8 +12,8 @@ Agreed baseline with the client: Python 3.12 (kickoff meeting, September 14). Su
 | Ubuntu 24.04 x86_64 | 3.12.3 | cffi | 715 passed | Local run, October 30, 2026 |
 | Ubuntu 24.04 x86_64 | 3.12.3 | bridge | 699 passed | Local run, October 30, 2026 |
 | Ubuntu 24.04 x86_64 | 3.12.3 | shared tests | 39 passed | Local run, October 30, 2026 |
-| Windows x86_64 | any | bridge | Not tested | Needs a Windows machine with the private repo |
-| Linux aarch64 | any | bridge | Not tested | |
+| Windows x86_64 | any | bridge | Builds, tests not run | Cross-compiled October 31, 2026, see the roadmap below |
+| Linux aarch64 | any | bridge | Builds, tests not run | Cross-compiled October 31, 2026, see the roadmap below |
 | Blueframe device | any | bridge | Not tested | Needs SEL hardware, see the [deployment plan](03_Deployment_Plan.md) |
 
 Total 2,161 passed, 0 failed, in 300 s. numpy 2.5.4, grpcio 1.85.1, protobuf 7.36.2, pytest 9.2.0. The test log stays with the private repo because test names include client internals.
@@ -45,9 +45,27 @@ On Windows a fatal .NET error ends Python with exit code 2148734499 (0x80131623)
 
 Same CI run as above.
 
+## Roadmap for Windows x86_64 and Linux aarch64
+
+The bridge and the fake hub are plain Go, so they can be cross-compiled from Linux. These builds were done on October 31, 2026 with Go 1.26.8 and `CGO_ENABLED=0`, from `gosignals` main at commit 49400d6.
+
+| Target | Bridge | Fake hub |
+|---|---|---|
+| windows/amd64 | Builds | Fails because `testhub/main.go` uses `syscall.SIGUSR1` and `SIGUSR2`, which Windows does not have |
+| linux/arm64 | Builds | Builds |
+
+Steps for Sprint 6, in order.
+
+1. Move the `SIGUSR1` and `SIGUSR2` handling in `testhub/main.go` into a file that only builds on Linux, so the fake hub builds for Windows. Until then the hub can run on a Linux machine and the Windows tests can connect to it over the network.
+2. Run `tests/e2e` and `tests/transport/test_bridge_transport.py` with `GOSIGNALS_TRANSPORTS=bridge` on a Windows x86_64 machine with Python 3.12, then 3.10 and 3.13.
+3. Run the same tests on a Linux aarch64 machine.
+4. Add each run to the first table with its date and pass count.
+
+The ctypes and cffi transports are left out. They load Go into Python through cgo, so each target would need a C cross compiler, and the user guide already tells engineers to use the bridge.
+
 ## Still open
 
-* The Go bridge on Windows. The Windows handshake fix is in, but nobody has run the suite there.
+* The Go bridge test suite on Windows and Linux aarch64. Both builds work, but no tests have been run there yet.
 * SEL's C# client. Only the stand-in class has been tested with Python.NET ([issue #36](https://github.com/calebh13/sel-blueframe-sdk/issues/36)).
 * numpy 1.26. Only numpy 2.x has been run.
 * A real Signal Hub. Everything so far is against the fake hub.
