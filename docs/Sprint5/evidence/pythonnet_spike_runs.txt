@@ -1,0 +1,48 @@
+== run 1 2026-10-30T16:18:32-07:00
+python 3.12.3 pythonnet runtime coreclr
+load_and_add_reference_s 0.153
+plain_call_us 2.85
+element_copy_samples_per_s 4655451.7
+block_copy_samples_per_s 119744718.6
+generic_float32_stored 1000000.0
+fetch_matches 1.0
+delivered 100000.0
+finished 1.0
+callbacks_per_s 331007.9
+ran_off_main_thread 1.0
+missing_channel KeyNotFoundException: no channel named missing
+length_mismatch ArgumentException: timestamps and values must be the same length
+session_alive_after True
+crash_in_child_exit_code -6
+== run 2 2026-10-30T16:18:34-07:00
+python 3.12.3 pythonnet runtime coreclr
+load_and_add_reference_s 0.154
+plain_call_us 2.72
+element_copy_samples_per_s 4634634.0
+block_copy_samples_per_s 124930507.4
+generic_float32_stored 1000000.0
+fetch_matches 1.0
+delivered 100000.0
+finished 1.0
+callbacks_per_s 354702.1
+ran_off_main_thread 1.0
+missing_channel KeyNotFoundException: no channel named missing
+length_mismatch ArgumentException: timestamps and values must be the same length
+session_alive_after True
+crash_in_child_exit_code -6
+== run 3 2026-10-30T16:18:36-07:00
+python 3.12.3 pythonnet runtime coreclr
+load_and_add_reference_s 0.15
+plain_call_us 2.74
+element_copy_samples_per_s 4463082.5
+block_copy_samples_per_s 134517970.3
+generic_float32_stored 1000000.0
+fetch_matches 1.0
+delivered 100000.0
+finished 1.0
+callbacks_per_s 316565.6
+ran_off_main_thread 1.0
+missing_channel KeyNotFoundException: no channel named missing
+length_mismatch ArgumentException: timestamps and values must be the same length
+session_alive_after True
+crash_in_child_exit_code -6
