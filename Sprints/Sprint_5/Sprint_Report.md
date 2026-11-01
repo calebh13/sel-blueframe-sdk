@@ -39,10 +39,10 @@ Here are links to the issues that we completed in this sprint:
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- * [spike.py](https://github.com/calebh13/sel-blueframe-sdk/blob/sprint-5-pythonnet-spike/code/pythonnet-spike/spike.py)
- * [test_spike.py](https://github.com/calebh13/sel-blueframe-sdk/blob/sprint-5-pythonnet-spike/code/pythonnet-spike/test_spike.py)
- * [LocalHub.cs](https://github.com/calebh13/sel-blueframe-sdk/blob/sprint-5-pythonnet-spike/code/pythonnet-spike/csharp/LocalHub.cs)
- * [pubsub_example.py](https://github.com/calebh13/sel-blueframe-sdk/blob/sprint-5-pythonnet-spike/docs/Sprint5/examples/pubsub_example.py)
+ * [spike.py](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/pythonnet-spike/spike.py)
+ * [test_spike.py](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/pythonnet-spike/test_spike.py)
+ * [LocalHub.cs](https://github.com/calebh13/sel-blueframe-sdk/blob/main/code/pythonnet-spike/csharp/LocalHub.cs)
+ * [pubsub_example.py](https://github.com/calebh13/sel-blueframe-sdk/blob/main/docs/Sprint5/examples/pubsub_example.py)
 
 ## Retrospective Summary
 Here's what went well:
